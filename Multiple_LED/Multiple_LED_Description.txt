@@ -1,0 +1,50 @@
+This is a simple Arduino program (written in C/C++ for the Arduino IDE) that makes multiple LEDs connected to digital pins turn on one by one in sequence, creating a chasing light effect. After reaching the last LED, the sequence repeats from the first LED.
+
+Code Breakdown
+Pin Definitions
+#define LED1 1
+#define LED2 2
+#define LED3 3
+#define LED4 4
+#define LED5 5
+#define LED6 6
+#define LED7 7
+
+
+→ Assigns meaningful names (LED1–LED7) to Arduino digital pins 1–7.
+→ Makes the code easier to read and maintain.
+
+void setup()
+
+Runs once when the Arduino starts or resets.
+
+pinMode(1, OUTPUT);
+pinMode(2, OUTPUT);
+pinMode(3, OUTPUT);
+pinMode(4, OUTPUT);
+pinMode(5, OUTPUT);
+pinMode(6, OUTPUT);
+pinMode(7, OUTPUT);
+
+
+→ Configures all LED pins as output pins so the Arduino can turn them on/off.
+
+void loop()
+
+Runs continuously in a cycle.
+
+digitalWrite(LED1, HIGH);
+delay(500);
+digitalWrite(LED1, LOW);
+delay(1000);
+
+
+→ Turns LED1 ON for 500 ms, then OFF, followed by a 1-second pause.
+
+This same pattern is repeated for LED2 → LED3 → ... → LED7, creating a sequential chasing effect.
+
+Result
+
+LEDs connected to pins 1–7 turn ON one by one, each staying on for 0.5 seconds with a 1-second gap between them.
+
+After the last LED turns off, the sequence repeats indefinitely, producing a simple LED chaser effect.
