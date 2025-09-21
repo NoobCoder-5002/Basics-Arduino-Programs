@@ -1,0 +1,28 @@
+This is a simple Arduino program (written in C/C++ for the Arduino IDE) that makes the built-in LED on pin 13 blink on and off with a 2-second interval.
+
+Here’s the breakdown:
+
+void setup()
+
+Runs once when the Arduino starts or resets.
+
+pinMode(13, OUTPUT);
+→ Configures digital pin 13 as an output pin (on most Arduino boards, pin 13 has a built-in LED).
+
+void loop()
+
+Runs continuously in a cycle.
+
+digitalWrite(13, HIGH);
+→ Turns ON the LED (applies 5V to pin 13).
+
+delay(2000);
+→ Waits for 2000 milliseconds (2 seconds) with the LED on.
+
+digitalWrite(13, LOW);
+→ Turns OFF the LED.
+
+delay(2000);
+→ Waits another 2 seconds with the LED off.
+
+Then the cycle repeats forever.
