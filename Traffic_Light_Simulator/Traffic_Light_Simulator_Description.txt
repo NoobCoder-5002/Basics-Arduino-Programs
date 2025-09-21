@@ -1,0 +1,48 @@
+This is a simple Arduino program (written in C/C++ for the Arduino IDE) that simulates a traffic light using three LEDs (Red, Yellow, and Green) connected to digital pins. The LEDs turn on in a sequence that mimics a real traffic light cycle:
+
+Code Breakdown
+Pin Definitions
+#define RED 2
+#define YELLOW 3
+#define GREEN 4
+
+
+→ Assigns meaningful names (RED, YELLOW, GREEN) to digital pins 2, 3, and 4 for better readability.
+
+void setup()
+
+Runs once when the Arduino starts or resets.
+
+pinMode(RED, OUTPUT);
+pinMode(YELLOW, OUTPUT);
+pinMode(GREEN, OUTPUT);
+
+
+→ Configures all three LED pins as output pins.
+
+void loop()
+
+Runs continuously in a cycle:
+
+digitalWrite(RED, HIGH);      // Red ON
+digitalWrite(YELLOW, LOW);
+digitalWrite(GREEN, LOW);
+delay(5000);                  // Red for 5 seconds
+
+digitalWrite(RED, LOW);
+digitalWrite(YELLOW, LOW);
+digitalWrite(GREEN, HIGH);    // Green ON
+delay(5000);                  // Green for 5 seconds
+
+digitalWrite(RED, LOW);
+digitalWrite(YELLOW, HIGH);   // Yellow ON
+digitalWrite(GREEN, LOW);
+delay(2000);                  // Yellow for 2 seconds
+
+
+→ Red lights for stop, Green lights for go, Yellow lights for caution.
+→ The sequence repeats indefinitely, simulating a traffic light.
+
+Result
+
+The LEDs mimic a real traffic light, switching from Red → Green → Yellow → Red continuously.
