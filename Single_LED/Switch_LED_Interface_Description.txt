@@ -1,0 +1,30 @@
+This is an Arduino program that controls an LED (on pin 13) based on the state of a digital input (on pin 12).
+
+Here’s the explanation:
+
+void setup()
+
+Runs once when the Arduino starts.
+
+pinMode(13, OUTPUT);
+→ Configures pin 13 as an output (to control an LED).
+
+pinMode(12, INPUT);
+→ Configures pin 12 as an input (to read a digital signal, e.g., from a button or switch).
+
+void loop()
+
+Runs repeatedly in a cycle.
+
+int a;
+→ Declares an integer variable a.
+
+a = digitalRead(12);
+→ Reads the logic level (HIGH = 1 or LOW = 0) from pin 12 and stores it in a.
+
+if(a==1)
+→ Checks if pin 12 is HIGH.
+
+If yes → digitalWrite(13, HIGH); turns ON the LED.
+
+Else → digitalWrite(13, LOW); turns OFF the LED.
