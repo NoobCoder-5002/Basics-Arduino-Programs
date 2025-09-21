@@ -11,3 +11,5 @@ components. Each example serves as a hands-on mini-project, making it easy to gr
 Topics covered include:
 
 1.[Single LED Blinking](Single_LED/Single_LED.ino)
+2.[Switch & LED Interface](Switch_LED_Interface/Switch_LED_Interface.ino)
+
