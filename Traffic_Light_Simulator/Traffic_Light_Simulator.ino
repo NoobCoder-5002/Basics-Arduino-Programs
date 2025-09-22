@@ -1,6 +1,6 @@
-#define RED 1
-#define YELLOW 2
-#define GREEN 3
+#define RED 11
+#define YELLOW 12
+#define GREEN 13
 
 void setup() {
     pinMode(RED,OUTPUT);
