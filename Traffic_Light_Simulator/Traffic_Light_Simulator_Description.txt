@@ -1,48 +1,83 @@
-This is a simple Arduino program (written in C/C++ for the Arduino IDE) that simulates a traffic light using three LEDs (Red, Yellow, and Green) connected to digital pins. The LEDs turn on in a sequence that mimics a real traffic light cycle:
-
-Code Breakdown
-Pin Definitions
-#define RED 2
-#define YELLOW 3
-#define GREEN 4
+Traffic Light Code Explanation
+1. Pin Definitions
+#define RED 1
+#define YELLOW 2
+#define GREEN 3
 
 
-→ Assigns meaningful names (RED, YELLOW, GREEN) to digital pins 2, 3, and 4 for better readability.
+Defines pin numbers with names:
 
-void setup()
+RED LED → Pin 11
+
+YELLOW LED → Pin 12
+
+GREEN LED → Pin 13
+
+Using names instead of raw numbers makes the code more readable.
+
+
+2. Setup Function
+void setup() {
+    pinMode(RED,OUTPUT);
+    pinMode(YELLOW,OUTPUT);
+    pinMode(GREEN,OUTPUT);
+}
+
 
 Runs once when the Arduino starts or resets.
 
-pinMode(RED, OUTPUT);
-pinMode(YELLOW, OUTPUT);
-pinMode(GREEN, OUTPUT);
+Sets pins 11, 12, and 13 as OUTPUT, so Arduino can send signals to the LEDs.
+
+3. Loop Function
+
+The loop runs continuously, cycling through the traffic light sequence.
+
+Red Light
+
+digitalWrite(RED,1);
+digitalWrite(YELLOW,0);
+digitalWrite(GREEN,0);
+
+delay(5000);
 
 
-→ Configures all three LED pins as output pins.
+Turns the Red LED ON.
 
-void loop()
+Keeps Yellow and Green OFF.
 
-Runs continuously in a cycle:
+Stays in this state for 5 seconds.
 
-digitalWrite(RED, HIGH);      // Red ON
-digitalWrite(YELLOW, LOW);
-digitalWrite(GREEN, LOW);
-delay(5000);                  // Red for 5 seconds
+Yellow Light
 
-digitalWrite(RED, LOW);
-digitalWrite(YELLOW, LOW);
-digitalWrite(GREEN, HIGH);    // Green ON
-delay(5000);                  // Green for 5 seconds
+digitalWrite(RED,0);
+digitalWrite(YELLOW,1);
+digitalWrite(GREEN,0);
 
-digitalWrite(RED, LOW);
-digitalWrite(YELLOW, HIGH);   // Yellow ON
-digitalWrite(GREEN, LOW);
-delay(2000);                  // Yellow for 2 seconds
+delay(2500);
 
 
-→ Red lights for stop, Green lights for go, Yellow lights for caution.
-→ The sequence repeats indefinitely, simulating a traffic light.
+Turns the Yellow LED ON.
 
-Result
+Turns Red and Green OFF.
 
-The LEDs mimic a real traffic light, switching from Red → Green → Yellow → Red continuously.
+Stays in this state for 2.5 seconds.
+
+Green Light
+
+digitalWrite(RED,0);
+digitalWrite(YELLOW,0);
+digitalWrite(GREEN,1);
+
+delay(5000);
+
+
+Turns the Green LED ON.
+
+Turns Red and Yellow OFF.
+
+Stays in this state for 5 seconds.
+
+4. Looping
+
+After Green, the loop function ends. Arduino automatically restarts the loop, so the cycle repeats forever:
+Red (5s) → Yellow (2.5s) → Green (5s) → Red ...
