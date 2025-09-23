@@ -1,8 +1,8 @@
 #define POT A0
-#define LED 13
+#define LED 11
 
 void setup(){
-    pinMode(13,OUTPUT);
+    pinMode(11,OUTPUT);
     pinMode(POT,INPUT);
 }
 
