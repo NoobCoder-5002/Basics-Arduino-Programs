@@ -1,0 +1,36 @@
+This Arduino program controls the brightness of an LED connected to pin 11 using a potentiometer connected to analog pin A0. As you rotate the potentiometer, the LED gradually changes brightness from OFF (dim) to fully ON (bright).
+
+Code Breakdown
+#define POT A0
+#define LED 11
+
+
+POT → Potentiometer is connected to analog input pin A0.
+
+LED → LED is connected to digital pin 11 
+
+void setup(){
+    pinMode(11,OUTPUT);
+    pinMode(POT,INPUT);
+}
+
+
+Configures pin 11 as an output (for LED).
+
+Configures A0 as input (for reading potentiometer).
+
+void loop(){
+    int POT_value = analogRead(POT);  
+    int Brightness = map(POT_value,0,1023,0,255);  
+    analogWrite(LED, Brightness);
+}
+
+
+analogRead(POT)
+Reads the potentiometer’s value → range 0–1023.
+
+map(POT_value, 0, 1023, 0, 255)
+Converts the 10-bit analog reading into an 8-bit PWM value (0–255).
+
+analogWrite(LED, Brightness)
+Sends PWM signal to the LED, making its brightness proportional to the potentiometer’s position.

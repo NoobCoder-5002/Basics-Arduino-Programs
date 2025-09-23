@@ -1,4 +1,3 @@
-
 # Basic Arduino Programs
 
 **Welcome to this beginner-friendly collection of Arduino sketches!**
@@ -15,5 +14,6 @@ Topics covered include:
 2.[Multiple LED Blinking](Multiple_LED/Multiple_LED.ino)  
 3.[Switch & LED Interface](Switch_LED_Interface/Switch_LED_Interface.ino)  
 4.[Traffic Light Simulator](Traffic_Light_Simulator/Traffic_Light_Simulator.ino)  
+5.[Potentiometer Controlled LED](Potentiomater_Controlled_LED/Potentiomater_Controlled_LED.ino)  
 
 
