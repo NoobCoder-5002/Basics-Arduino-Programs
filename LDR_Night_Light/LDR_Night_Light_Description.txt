@@ -1,0 +1,17 @@
+# Automatic Night-Light System (LDR)
+
+### Project Description
+This project creates an Automatic Night-Light system. It uses an LDR (Photoresistor) to sense the intensity of ambient light and triggers an LED when the environment becomes dark.
+
+**How it works:** An LDR’s resistance changes based on light intensity. In bright light, its resistance is low; in the dark, its resistance is high.
+
+**The Logic:** The Arduino reads an analog voltage from a voltage divider circuit. When the value falls below a specific threshold (meaning it has become dark), the Arduino sends a HIGH signal to turn on the LED.
+
+### Hardware Connections
+| Component | Pin Connection |
+| :--- | :--- |
+| LDR (One leg) | 5V |
+| LDR (Other leg) | Analog Pin A0 (and to 10k Ohm Resistor) |
+| 10k Ohm Resistor | From A0 to GND |
+| LED Anode | Digital Pin 13 |
+| LED Cathode | GND (via 220 Ohm Resistor) |
