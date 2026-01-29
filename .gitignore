@@ -1,0 +1,14 @@
+# Arduino & Embedded C++ build files
+*.o
+*.elf
+*.bin
+*.hex
+build/
+
+# MATLAB temporary/autosave files
+*.asv
+*.mat
+
+# System files
+.DS_Store
+Thumbs.db
